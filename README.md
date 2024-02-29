@@ -1,4 +1,4 @@
-# Mobile Phone Booking System
+# Mobile Phone Reservation System for Testing purpose
 
 This application manages the booking and returning of mobile phones for testing purposes.
 
