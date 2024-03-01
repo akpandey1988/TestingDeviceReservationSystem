@@ -5,7 +5,7 @@ import com.phonebooking.domain.model.ModelName;
 
 import java.util.List;
 
-public interface IMobilePhoneRepository {
+public interface MobilePhoneRepository {
     MobilePhone findByModel(ModelName modelName);
     List<MobilePhone> getAll();
     List<MobilePhone> getAllAvailablePhones();

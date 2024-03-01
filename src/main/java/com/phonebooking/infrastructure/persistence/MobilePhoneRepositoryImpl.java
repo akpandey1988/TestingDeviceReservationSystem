@@ -2,18 +2,18 @@ package com.phonebooking.infrastructure.persistence;
 
 import com.phonebooking.domain.model.MobilePhone;
 import com.phonebooking.domain.model.ModelName;
-import com.phonebooking.domain.repository.IMobilePhoneRepository;
+import com.phonebooking.domain.repository.MobilePhoneRepository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class MobilePhoneRepository implements IMobilePhoneRepository {
+public class MobilePhoneRepositoryImpl implements MobilePhoneRepository {
     //Using in memory map ideally this would be a table in db
     private Map<ModelName, MobilePhone> phones;
 
-    public MobilePhoneRepository() {
+    public MobilePhoneRepositoryImpl() {
         phones = new HashMap<>();
         initializePhones();
     }

@@ -2,7 +2,7 @@ package com.phonebooking.test.domain.application;
 
 import com.phonebooking.application.MobilePhoneReservationClient;
 import com.phonebooking.domain.model.ModelName;
-import com.phonebooking.domain.service.IMobilePhoneBookingService;
+import com.phonebooking.domain.service.MobilePhoneBookingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -19,8 +19,6 @@ import static org.mockito.Mockito.*;
 
 public class MobilePhoneReservationClientTest {
     private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
-    private final InputStream originalIn = System.in;
 
     @BeforeEach
     public void setUp() {
@@ -32,7 +30,7 @@ public class MobilePhoneReservationClientTest {
         // Arrange
         ByteArrayInputStream inputStream = new ByteArrayInputStream("5\n".getBytes());
         System.setIn(inputStream);
-        IMobilePhoneBookingService phoneService = Mockito.mock(IMobilePhoneBookingService.class);
+        MobilePhoneBookingService phoneService = Mockito.mock(MobilePhoneBookingService.class);
         Scanner scanner = new Scanner(System.in);
         MobilePhoneReservationClient client = new MobilePhoneReservationClient(scanner, phoneService);
 
@@ -60,7 +58,7 @@ public class MobilePhoneReservationClientTest {
         // Arrange
         ByteArrayInputStream inputStream = new ByteArrayInputStream("4\n5\n".getBytes());
         System.setIn(inputStream);
-        IMobilePhoneBookingService phoneService = Mockito.mock(IMobilePhoneBookingService.class);
+        MobilePhoneBookingService phoneService = Mockito.mock(MobilePhoneBookingService.class);
         Scanner scanner = new Scanner(System.in);
         MobilePhoneReservationClient client = new MobilePhoneReservationClient(scanner, phoneService);
 
@@ -76,7 +74,7 @@ public class MobilePhoneReservationClientTest {
         // Arrange
         ByteArrayInputStream inputStream = new ByteArrayInputStream("2\n1\nAkhilesh\n5\n".getBytes());
         System.setIn(inputStream);
-        IMobilePhoneBookingService phoneService = Mockito.mock(IMobilePhoneBookingService.class);
+        MobilePhoneBookingService phoneService = Mockito.mock(MobilePhoneBookingService.class);
         when(phoneService.bookPhone(any(ModelName.class), any(String.class))).thenReturn(0);
         Scanner scanner = new Scanner(System.in);
         MobilePhoneReservationClient client = new MobilePhoneReservationClient(scanner, phoneService);
@@ -93,7 +91,7 @@ public class MobilePhoneReservationClientTest {
         // Arrange
         ByteArrayInputStream inputStream = new ByteArrayInputStream("3\n1\n5\n".getBytes());
         System.setIn(inputStream);
-        IMobilePhoneBookingService phoneService = Mockito.mock(IMobilePhoneBookingService.class);
+        MobilePhoneBookingService phoneService = Mockito.mock(MobilePhoneBookingService.class);
         when(phoneService.bookPhone(any(ModelName.class), any(String.class))).thenReturn(0);
         Scanner scanner = new Scanner(System.in);
         MobilePhoneReservationClient client = new MobilePhoneReservationClient(scanner, phoneService);

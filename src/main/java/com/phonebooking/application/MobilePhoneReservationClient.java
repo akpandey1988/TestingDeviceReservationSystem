@@ -1,16 +1,16 @@
 package com.phonebooking.application;
 
 import com.phonebooking.domain.model.ModelName;
-import com.phonebooking.domain.service.IMobilePhoneBookingService;
+import com.phonebooking.domain.service.MobilePhoneBookingService;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MobilePhoneReservationClient {
     private final Scanner scanner;
-    private final IMobilePhoneBookingService phoneService;
+    private final MobilePhoneBookingService phoneService;
 
-    public MobilePhoneReservationClient(Scanner scanner, IMobilePhoneBookingService phoneService) {
+    public MobilePhoneReservationClient(Scanner scanner, MobilePhoneBookingService phoneService) {
         this.scanner = scanner;
         this.phoneService = phoneService;
     }

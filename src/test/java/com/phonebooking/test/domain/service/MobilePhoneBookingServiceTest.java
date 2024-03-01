@@ -1,10 +1,10 @@
 package com.phonebooking.test.domain.service;
 
 import com.phonebooking.domain.model.ModelName;
-import com.phonebooking.domain.repository.IMobilePhoneRepository;
-import com.phonebooking.domain.service.IMobilePhoneBookingService;
+import com.phonebooking.domain.repository.MobilePhoneRepository;
 import com.phonebooking.domain.service.MobilePhoneBookingService;
-import com.phonebooking.infrastructure.persistence.MobilePhoneRepository;
+import com.phonebooking.domain.service.MobilePhoneBookingServiceImpl;
+import com.phonebooking.infrastructure.persistence.MobilePhoneRepositoryImpl;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,13 +12,13 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class MobilePhoneBookingServiceTest {
-    private IMobilePhoneBookingService phoneService;
-    private IMobilePhoneRepository phoneRepository;
+    private MobilePhoneBookingService phoneService;
+    private MobilePhoneRepository phoneRepository;
 
     @Before
     public void setUp() {
-        phoneRepository = new MobilePhoneRepository();
-        phoneService = new MobilePhoneBookingService(phoneRepository);
+        phoneRepository = new MobilePhoneRepositoryImpl();
+        phoneService = new MobilePhoneBookingServiceImpl(phoneRepository);
     }
 
     @Test
